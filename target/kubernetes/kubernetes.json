@@ -3,8 +3,8 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "067ea629f8021336c86f2ce97de350f15ff543d1",
-      "app.quarkus.io/build-timestamp" : "2021-09-06 - 13:42:58 +0000"
+      "app.quarkus.io/commit-id" : "bd48b658e1cfbd34fa56421546de2ef16cf658b8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 14:13:02 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "webinar-demo",
@@ -29,8 +29,8 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "067ea629f8021336c86f2ce97de350f15ff543d1",
-      "app.quarkus.io/build-timestamp" : "2021-09-06 - 13:42:58 +0000"
+      "app.quarkus.io/commit-id" : "bd48b658e1cfbd34fa56421546de2ef16cf658b8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 14:13:02 +0000"
     },
     "labels" : {
       "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
@@ -49,8 +49,8 @@
     "template" : {
       "metadata" : {
         "annotations" : {
-          "app.quarkus.io/commit-id" : "067ea629f8021336c86f2ce97de350f15ff543d1",
-          "app.quarkus.io/build-timestamp" : "2021-09-06 - 13:42:58 +0000"
+          "app.quarkus.io/commit-id" : "bd48b658e1cfbd34fa56421546de2ef16cf658b8",
+          "app.quarkus.io/build-timestamp" : "2021-09-06 - 14:13:02 +0000"
         },
         "labels" : {
           "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
@@ -66,6 +66,12 @@
                 "fieldPath" : "metadata.namespace"
               }
             }
+          }, {
+            "name" : "JAVA_APP_JAR",
+            "value" : "/deployments/quarkus-run.jar"
+          }, {
+            "name" : "JAVA_OPTIONS",
+            "value" : "-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
           } ],
           "image" : "admin/webinar-demo:1.0.0-SNAPSHOT",
           "imagePullPolicy" : "Always",
