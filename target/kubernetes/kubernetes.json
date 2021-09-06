@@ -3,8 +3,8 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
-      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+      "app.quarkus.io/commit-id" : "067ea629f8021336c86f2ce97de350f15ff543d1",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 13:42:58 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "webinar-demo",
@@ -29,12 +29,12 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
-      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+      "app.quarkus.io/commit-id" : "067ea629f8021336c86f2ce97de350f15ff543d1",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 13:42:58 +0000"
     },
     "labels" : {
-      "app.kubernetes.io/name" : "webinar-demo",
-      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.kubernetes.io/name" : "webinar-demo"
     },
     "name" : "webinar-demo"
   },
@@ -42,19 +42,19 @@
     "replicas" : 1,
     "selector" : {
       "matchLabels" : {
-        "app.kubernetes.io/name" : "webinar-demo",
-        "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+        "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+        "app.kubernetes.io/name" : "webinar-demo"
       }
     },
     "template" : {
       "metadata" : {
         "annotations" : {
-          "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
-          "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+          "app.quarkus.io/commit-id" : "067ea629f8021336c86f2ce97de350f15ff543d1",
+          "app.quarkus.io/build-timestamp" : "2021-09-06 - 13:42:58 +0000"
         },
         "labels" : {
-          "app.kubernetes.io/name" : "webinar-demo",
-          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+          "app.kubernetes.io/name" : "webinar-demo"
         }
       },
       "spec" : {
@@ -66,14 +66,8 @@
                 "fieldPath" : "metadata.namespace"
               }
             }
-          }, {
-            "name" : "JAVA_APP_JAR",
-            "value" : "/deployments/quarkus-run.jar"
-          }, {
-            "name" : "JAVA_OPTIONS",
-            "value" : "-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
           } ],
-          "image" : "user_opensh/webinar-demo:1.0.0-SNAPSHOT",
+          "image" : "admin/webinar-demo:1.0.0-SNAPSHOT",
           "imagePullPolicy" : "Always",
           "name" : "webinar-demo",
           "ports" : [ {

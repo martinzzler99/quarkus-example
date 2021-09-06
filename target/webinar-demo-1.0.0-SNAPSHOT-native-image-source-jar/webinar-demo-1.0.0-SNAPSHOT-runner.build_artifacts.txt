@@ -1,0 +1,6 @@
+[EXECUTABLE]
+webinar-demo-1.0.0-SNAPSHOT-runner.exe
+
+[JDK_LIB]
+sunmscapi.dll
+
