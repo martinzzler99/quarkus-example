@@ -1,0 +1,189 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "ports" : [ {
+      "name" : "http",
+      "port" : 80,
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+    },
+    "type" : "ClusterIP"
+  }
+}{
+  "apiVersion" : "image.openshift.io/v1",
+  "kind" : "ImageStream",
+  "metadata" : {
+    "name" : "openjdk-11-rhel7"
+  },
+  "spec" : {
+    "dockerImageRepository" : "registry.access.redhat.com/openjdk/openjdk-11-rhel7"
+  }
+}{
+  "apiVersion" : "image.openshift.io/v1",
+  "kind" : "ImageStream",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : { }
+}{
+  "apiVersion" : "build.openshift.io/v1",
+  "kind" : "BuildConfig",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "output" : {
+      "to" : {
+        "kind" : "ImageStreamTag",
+        "name" : "webinar-demo:1.0.0-SNAPSHOT"
+      }
+    },
+    "source" : {
+      "binary" : { }
+    },
+    "strategy" : {
+      "sourceStrategy" : {
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "openjdk-11-rhel7:latest"
+        }
+      }
+    }
+  }
+}{
+  "apiVersion" : "apps.openshift.io/v1",
+  "kind" : "DeploymentConfig",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "replicas" : 1,
+    "selector" : {
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.kubernetes.io/name" : "webinar-demo"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "app.openshift.io/vcs-url" : "<<unknown>>",
+          "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
+          "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+        },
+        "labels" : {
+          "app.kubernetes.io/name" : "webinar-demo",
+          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+          "app.openshift.io/runtime" : "quarkus"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          }, {
+            "name" : "JAVA_APP_JAR",
+            "value" : "/deployments/quarkus-run.jar"
+          }, {
+            "name" : "JAVA_OPTIONS",
+            "value" : "-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
+          } ],
+          "image" : "user_opensh/webinar-demo:1.0.0-SNAPSHOT",
+          "imagePullPolicy" : "IfNotPresent",
+          "name" : "webinar-demo",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          } ]
+        } ]
+      }
+    },
+    "triggers" : [ {
+      "imageChangeParams" : {
+        "automatic" : true,
+        "containerNames" : [ "webinar-demo" ],
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "webinar-demo:1.0.0-SNAPSHOT"
+        }
+      },
+      "type" : "ImageChange"
+    } ]
+  }
+}{
+  "apiVersion" : "route.openshift.io/v1",
+  "kind" : "Route",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/commit-id" : "61e1f3a49697b38c7a23460822c5f454f803f5d8",
+      "app.quarkus.io/build-timestamp" : "2021-09-06 - 12:35:16 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "port" : {
+      "targetPort" : 8080
+    },
+    "to" : {
+      "kind" : "Service",
+      "name" : "webinar-demo"
+    }
+  }
+}
