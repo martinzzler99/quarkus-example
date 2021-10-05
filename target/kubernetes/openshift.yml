@@ -4,8 +4,8 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: bd48b658e1cfbd34fa56421546de2ef16cf658b8
-    app.quarkus.io/build-timestamp: 2021-09-06 - 14:13:02 +0000
+    app.quarkus.io/commit-id: d74c20b08582371491643f0d52ab3269be32f821
+    app.quarkus.io/build-timestamp: 2021-10-05 - 09:46:59 +0000
   labels:
     app.kubernetes.io/name: webinar-demo
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -33,11 +33,11 @@ kind: ImageStream
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: bd48b658e1cfbd34fa56421546de2ef16cf658b8
-    app.quarkus.io/build-timestamp: 2021-09-06 - 14:13:02 +0000
+    app.quarkus.io/commit-id: d74c20b08582371491643f0d52ab3269be32f821
+    app.quarkus.io/build-timestamp: 2021-10-05 - 09:46:59 +0000
   labels:
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.kubernetes.io/name: webinar-demo
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.openshift.io/runtime: quarkus
   name: webinar-demo
 spec: {}
@@ -47,11 +47,11 @@ kind: BuildConfig
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: bd48b658e1cfbd34fa56421546de2ef16cf658b8
-    app.quarkus.io/build-timestamp: 2021-09-06 - 14:13:02 +0000
+    app.quarkus.io/commit-id: d74c20b08582371491643f0d52ab3269be32f821
+    app.quarkus.io/build-timestamp: 2021-10-05 - 09:46:59 +0000
   labels:
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.kubernetes.io/name: webinar-demo
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.openshift.io/runtime: quarkus
   name: webinar-demo
 spec:
@@ -72,27 +72,27 @@ kind: DeploymentConfig
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: bd48b658e1cfbd34fa56421546de2ef16cf658b8
-    app.quarkus.io/build-timestamp: 2021-09-06 - 14:13:02 +0000
+    app.quarkus.io/commit-id: d74c20b08582371491643f0d52ab3269be32f821
+    app.quarkus.io/build-timestamp: 2021-10-05 - 09:46:59 +0000
   labels:
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.kubernetes.io/name: webinar-demo
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.openshift.io/runtime: quarkus
   name: webinar-demo
 spec:
   replicas: 1
   selector:
-    app.kubernetes.io/name: webinar-demo
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.kubernetes.io/name: webinar-demo
   template:
     metadata:
       annotations:
         app.openshift.io/vcs-url: <<unknown>>
-        app.quarkus.io/commit-id: bd48b658e1cfbd34fa56421546de2ef16cf658b8
-        app.quarkus.io/build-timestamp: 2021-09-06 - 14:13:02 +0000
+        app.quarkus.io/commit-id: d74c20b08582371491643f0d52ab3269be32f821
+        app.quarkus.io/build-timestamp: 2021-10-05 - 09:46:59 +0000
       labels:
-        app.kubernetes.io/version: 1.0.0-SNAPSHOT
         app.kubernetes.io/name: webinar-demo
+        app.kubernetes.io/version: 1.0.0-SNAPSHOT
         app.openshift.io/runtime: quarkus
     spec:
       containers:
@@ -105,7 +105,7 @@ spec:
               value: /deployments/quarkus-run.jar
             - name: JAVA_OPTIONS
               value: -Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager
-          image: admin/webinar-demo:1.0.0-SNAPSHOT
+          image: user_opensh/webinar-demo:1.0.0-SNAPSHOT
           imagePullPolicy: IfNotPresent
           name: webinar-demo
           ports:
@@ -127,8 +127,8 @@ kind: Route
 metadata:
   annotations:
     app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: bd48b658e1cfbd34fa56421546de2ef16cf658b8
-    app.quarkus.io/build-timestamp: 2021-09-06 - 14:13:02 +0000
+    app.quarkus.io/commit-id: d74c20b08582371491643f0d52ab3269be32f821
+    app.quarkus.io/build-timestamp: 2021-10-05 - 09:46:59 +0000
   labels:
     app.kubernetes.io/name: webinar-demo
     app.kubernetes.io/version: 1.0.0-SNAPSHOT

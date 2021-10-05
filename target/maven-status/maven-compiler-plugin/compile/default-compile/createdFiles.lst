@@ -1,1 +1,3 @@
+org\acme\ExampleResource.class
 quarkus\webinar\GreetingResource.class
+org\acme\Customer.class
