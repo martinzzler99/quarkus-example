@@ -4,8 +4,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "5d2232a7e5a0d4e457a4a46248ff1a2cb982a77b",
-      "app.quarkus.io/build-timestamp" : "2021-10-05 - 16:03:22 +0000"
+      "app.quarkus.io/commit-id" : "5c5f7347bec5df87cda87f0d33eff5004938cf31",
+      "app.quarkus.io/build-timestamp" : "2021-10-06 - 09:08:20 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "quarkus-demo",
@@ -41,8 +41,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "5d2232a7e5a0d4e457a4a46248ff1a2cb982a77b",
-      "app.quarkus.io/build-timestamp" : "2021-10-05 - 16:03:22 +0000"
+      "app.quarkus.io/commit-id" : "5c5f7347bec5df87cda87f0d33eff5004938cf31",
+      "app.quarkus.io/build-timestamp" : "2021-10-06 - 09:08:20 +0000"
     },
     "labels" : {
       "app.kubernetes.io/version" : "1.0.0",
@@ -58,8 +58,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "5d2232a7e5a0d4e457a4a46248ff1a2cb982a77b",
-      "app.quarkus.io/build-timestamp" : "2021-10-05 - 16:03:22 +0000"
+      "app.quarkus.io/commit-id" : "5c5f7347bec5df87cda87f0d33eff5004938cf31",
+      "app.quarkus.io/build-timestamp" : "2021-10-06 - 09:08:20 +0000"
     },
     "labels" : {
       "app.kubernetes.io/version" : "1.0.0",
@@ -93,8 +93,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "5d2232a7e5a0d4e457a4a46248ff1a2cb982a77b",
-      "app.quarkus.io/build-timestamp" : "2021-10-05 - 16:03:22 +0000"
+      "app.quarkus.io/commit-id" : "5c5f7347bec5df87cda87f0d33eff5004938cf31",
+      "app.quarkus.io/build-timestamp" : "2021-10-06 - 09:08:20 +0000"
     },
     "labels" : {
       "app.kubernetes.io/version" : "1.0.0",
@@ -113,8 +113,8 @@
       "metadata" : {
         "annotations" : {
           "app.openshift.io/vcs-url" : "<<unknown>>",
-          "app.quarkus.io/commit-id" : "5d2232a7e5a0d4e457a4a46248ff1a2cb982a77b",
-          "app.quarkus.io/build-timestamp" : "2021-10-05 - 16:03:22 +0000"
+          "app.quarkus.io/commit-id" : "5c5f7347bec5df87cda87f0d33eff5004938cf31",
+          "app.quarkus.io/build-timestamp" : "2021-10-06 - 09:08:20 +0000"
         },
         "labels" : {
           "app.kubernetes.io/version" : "1.0.0",
@@ -167,8 +167,8 @@
   "metadata" : {
     "annotations" : {
       "app.openshift.io/vcs-url" : "<<unknown>>",
-      "app.quarkus.io/commit-id" : "5d2232a7e5a0d4e457a4a46248ff1a2cb982a77b",
-      "app.quarkus.io/build-timestamp" : "2021-10-05 - 16:03:22 +0000"
+      "app.quarkus.io/commit-id" : "5c5f7347bec5df87cda87f0d33eff5004938cf31",
+      "app.quarkus.io/build-timestamp" : "2021-10-06 - 09:08:20 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "quarkus-demo",
